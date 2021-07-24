@@ -26,11 +26,42 @@ public class Romes extends Number {
                 return convert_result_to_Romes(n - ostatok, 0) + roman_letters_9[(ostatok + 1) * -1];
             }
         }
-        //Возможность вывести отрицательное римское число
-        if (n > 0) {
+        //vozmozhnost vyvesty otricatelnoe rimskoe chislo
+        if (n >= 100) {
+            n = n - 100;
+            return convert_result_to_Romes(n,0) + "C";
+        }else if (n>=90){
+            n = n - 90;
+            return convert_result_to_Romes(n,0) + "XC";
+        }
+        else if (n>=80){
+            n = n - 80;
+            return convert_result_to_Romes(n,0) + "LXXX";
+        }
+        else if (n>=70){
+            n = n - 70;
+            return convert_result_to_Romes(n,0) + "LXX";
+        }
+        else if (n>=60){
+            n = n - 60;
+            return convert_result_to_Romes(n,0) + "LX";
+        }
+        else if (n>=50){
+            n = n - 50;
+            return convert_result_to_Romes(n,0) + "L";}
+        else if (n>=40){
+            n = n - 40;
+            return convert_result_to_Romes(n,0) + "XL";}
+        else if (n>=30){
+            n = n - 30;
+            return convert_result_to_Romes(n,0) + "XXX";}
+        else if (n>=20){
+            n = n - 20;
+            return convert_result_to_Romes(n,0) + "XX";}
+        else if (n>=10){
             n = n - 10;
-            return convert_result_to_Romes(n,0) + "X";
-        } else if (n < 0) {
+            return convert_result_to_Romes(n,0) + "X";}
+        else if (n < 0) {
             n = n + 10;
             return convert_result_to_Romes(n,0) + "X";
         }   else {
@@ -90,7 +121,6 @@ public class Romes extends Number {
                 case 'X':
                     values_int[i] = 10;
                     break;
-
                 default:
                     System.out.println("Soderzhitsy neverny simvol:");
                     break;
